@@ -1,0 +1,59 @@
+[rpc_and_lcd_endpoints]
+eth_rpc_endpoint = "https://ethereum-mainnet-rpc.allthatnode.com" # Replace with infura endpoint 
+bor_rpc_end_point = "http://ec2-13-209-122-59.montioring:8545"
+bor_external_rpc = "https://polygon-mainnet-rpc.allthatnode.com:8545" # Replace the IP address with your sentry IP address
+heimdall_rpc_endpoint = "http://ec2-13-209-122-59.montioring:26657"
+heimdall_lcd_endpoint = "http://ec2-13-209-122-59.montioring:1317"
+heimdall_external_rpc = "https://polygon-mainnet-rpc.allthatnode.com:26657" # Replace the IP address with your sentry IP address
+
+[validator_details]
+validator_hex_addr = "b43fb23f5979bff557c9f50dd52f00edb7d3cc54" # Replace this address with your validator hex address. You can get it by running this cmd on validator- heimdallcli status | jq .validator_info.address
+signer_address = "0xb43fb23f5979bff557c9f50dd52f00edb7d3cc54" # Replace this with your valdiator signer address
+validator_name = "a41" # Your validator moniker
+stake_manager_contract = "0x5e3Ef299fDDf15eAa0432E6e66473ace8c13D908" # Stake manager contract address on Ethereum mainnet
+
+[enable_alerts]
+enable_telegram_alerts = false
+enable_email_alerts = false
+
+[regular_status_alerts]
+alert_timings = ["02:30PM","12:18PM","12:19PM","02:33PM"]
+
+[alerter_preferences]
+balance_change_alerts = "yes"
+voting_power_alerts = "yes"
+proposal_alerts = "yes"
+block_diff_alerts = "yes"
+missed_block_alerts = "yes"
+num_peers_alerts = "yes"
+node_sync_alert = "yes"
+node_status_alert = "yes"
+eth_low_balance_alert = "yes"
+
+[alerting_threholds]
+num_peers_threshold = 0
+missed_blocks_threshold = 10
+block_diff_threshold = 10
+eth_balance_threshold = 0.1
+
+[scraper]
+rate = "6s"
+validator_rate = "60s"
+contract_rate = "300s"
+tg_commnads_rate = "2s"
+
+[telegram]
+tg_chat_id = 228288878 # Replace your chat id here
+tg_bot_token = "1117273891:AAEtr3ZU5x4JRj5YSF4LBeu1fPF0T4xj-UI" # Replace your bot token here
+
+[sendgrid]
+sendgrid_token = "SG.J4dl16RST9OM9Nc2Tbvh6A.L_FPSzlqvBesPPQP72hATEt5Hs8TUzo9Dl3ohG8Rk"
+receiver_email_address = "xyz@example.com"
+account_email = "xyz@domain.com"
+sendgrid_account_name = "xyz"
+
+[influxdb]
+port = "8086"
+ip = "http://influx-influxdb.monitoring"
+database = "matic"
+username = ""
