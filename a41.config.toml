@@ -1,9 +1,9 @@
 [rpc_and_lcd_endpoints]
 eth_rpc_endpoint = "https://ethereum-mainnet-rpc.allthatnode.com" # Replace with infura endpoint 
-bor_rpc_end_point = "http://ec2-13-209-122-59.montioring:8545"
+bor_rpc_end_point = "http://13.209.122.59:8545"
 bor_external_rpc = "https://polygon-mainnet-rpc.allthatnode.com:8545" # Replace the IP address with your sentry IP address
-heimdall_rpc_endpoint = "http://ec2-13-209-122-59.montioring:26657"
-heimdall_lcd_endpoint = "http://ec2-13-209-122-59.montioring:1317"
+heimdall_rpc_endpoint = "http://13.209.122.59:26657"
+heimdall_lcd_endpoint = "http://13.209.122.59:1317"
 heimdall_external_rpc = "https://polygon-mainnet-rpc.allthatnode.com:26657" # Replace the IP address with your sentry IP address
 
 [validator_details]

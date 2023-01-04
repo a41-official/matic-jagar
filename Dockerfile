@@ -6,7 +6,5 @@ WORKDIR /matic
 RUN git clone https://github.com/a41ventures/matic-jagar.git .
 RUN go build -o matic-jager
 
-FROM gcr.io/distroless/static-debian11
-
+FROM golang
 COPY --from=builder /matic/matic-jager /bin/matic-jager
-
