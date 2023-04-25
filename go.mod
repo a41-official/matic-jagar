@@ -13,5 +13,6 @@ require (
 	github.com/spf13/viper v1.7.1
 	github.com/technoweenie/multipartstreamer v1.0.1 // indirect
 	golang.org/x/text v0.3.4
+	gopkg.in/go-playground/assert.v1 v1.2.1 // indirect
 	gopkg.in/go-playground/validator.v9 v9.31.0
 )

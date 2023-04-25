@@ -27,7 +27,7 @@ func (m targetRunner) Run(function func(ops types.HTTPOptions, cfg *config.Confi
 }
 
 // InitTargets which returns the targets
-//can write all the endpoints here
+// can write all the endpoints here
 func InitTargets(cfg *config.Config) *types.Targets {
 	return &types.Targets{List: []types.Target{
 		{
@@ -342,6 +342,16 @@ func InitTargets(cfg *config.Config) *types.Targets {
 			Func:        ValidatorCaughtUp,
 			ScraperRate: cfg.Scraper.Rate,
 		},
+		{
+			ExecutionType: "http",
+			Name:          "Get Validator Missed Checkpoints",
+			HTTPOptions: types.HTTPOptions{
+				Endpoint: cfg.Endpoints.PolygonStakingEndpoint + "/validators/" + cfg.ValDetails.ValidatorNumber,
+				Method:   http.MethodGet,
+			},
+			Func:        MissedCheckPointsCount,
+			ScraperRate: cfg.Scraper.Rate,
+		},
 	}}
 }
 
@@ -353,7 +363,7 @@ func addQueryParameters(req *http.Request, queryParams types.QueryParams) {
 	req.URL.RawQuery = params.Encode()
 }
 
-//newHTTPRequest to make a new http request
+// newHTTPRequest to make a new http request
 func newHTTPRequest(ops types.HTTPOptions) (*http.Request, error) {
 	// make new request
 	payloadBytes, _ := json.Marshal(ops.Body)

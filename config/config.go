@@ -58,12 +58,13 @@ type (
 
 	// Endpoints defines multiple API base-urls to fetch the data
 	Endpoints struct {
-		EthRPCEndpoint      string `mapstructure:"eth_rpc_endpoint"`
-		BorRPCEndpoint      string `mapstructure:"bor_rpc_end_point"`
-		BorExternalRPC      string `mapstructure:"bor_external_rpc"`
-		HeimdallRPCEndpoint string `mapstructure:"heimdall_rpc_endpoint"`
-		HeimdallLCDEndpoint string `mapstructure:"heimdall_lcd_endpoint"`
-		HeimdallExternalRPC string `mapstructure:"heimdall_external_rpc"`
+		EthRPCEndpoint         string `mapstructure:"eth_rpc_endpoint"`
+		BorRPCEndpoint         string `mapstructure:"bor_rpc_end_point"`
+		BorExternalRPC         string `mapstructure:"bor_external_rpc"`
+		HeimdallRPCEndpoint    string `mapstructure:"heimdall_rpc_endpoint"`
+		HeimdallLCDEndpoint    string `mapstructure:"heimdall_lcd_endpoint"`
+		HeimdallExternalRPC    string `mapstructure:"heimdall_external_rpc"`
+		PolygonStakingEndpoint string `mapstructure:"polygon_staking_endpoint"`
 	}
 
 	// ValDetails stores the validator meta details
@@ -76,6 +77,8 @@ type (
 		ValidatorName string `mapstructure:"validator_name"`
 		// StakeManagerContract is the address of stake manager contract which will be used to get vaidator share contract etc
 		StakeManagerContract string `mapstructure:"stake_manager_contract"`
+		// ValidatorNumber is the number of your validator at staking.polygon.technology
+		ValidatorNumber string `mapstructure:"validator_number"`
 	}
 
 	// EnableAlerts struct which holds options to enalbe/disable alerts

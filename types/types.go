@@ -396,4 +396,12 @@ type (
 	Caughtup struct {
 		Syncing bool `json:"syncing"`
 	}
+
+	// ValidatorInfo struct which holds the parameters of missed checkpoint response
+	ValidatorInfo struct {
+		Success bool `json:"success"`
+		Result  struct {
+			CheckpointsMissed int `json:"checkpointsMissed"`
+		} `json:"result"`
+	}
 )
