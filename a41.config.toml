@@ -5,12 +5,14 @@ bor_external_rpc = "http://211.219.19.67:8545" # Replace the IP address with you
 heimdall_rpc_endpoint = "http://211.219.19.71:26657"
 heimdall_lcd_endpoint = "http://211.219.19.71:1317"
 heimdall_external_rpc = "http://211.219.19.67:26657" # Replace the IP address with your sentry IP address
+polygon_staking_endpoint = "https://staking-api.polygon.technology/api/v2"
 
 [validator_details]
 validator_hex_addr = "d6dbd84137d9337b01583b1c23c14b1d0da8e1cd" # Replace this address with your validator hex address. You can get it by running this cmd on validator- heimdallcli status | jq .validator_info.address
 signer_address = "0xd6dbd84137d9337b01583b1c23c14b1d0da8e1cd" # Replace this with your valdiator signer address
 validator_name = "a41" # Your validator moniker
 stake_manager_contract = "0x5e3Ef299fDDf15eAa0432E6e66473ace8c13D908" # Stake manager contract address on Ethereum mainnet
+validator_number = 145 # Your validator number at https://staking.polygon.technology
 
 [enable_alerts]
 enable_telegram_alerts = false

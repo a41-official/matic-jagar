@@ -179,3 +179,22 @@ func GetLastProposedCheckpoint(cfg *config.Config, c client.Client) string {
 	}
 	return cp
 }
+
+// GetMissedCheckpoint returns missed checkpoint count from polygon staking api
+func MissedCheckPointsCount(ops types.HTTPOptions, cfg *config.Config, c client.Client) {
+	bp, err := db.CreateBatchPoints(cfg.InfluxDB.Database)
+	if err != nil {
+		return
+	}
+
+	cp, err := scraper.GetMissedCheckPoints(ops)
+	if err != nil {
+		log.Printf("Error in get total checkPoints: %v", err)
+		return
+	}
+
+	count := cp.Result.CheckpointsMissed
+
+	_ = db.WriteToInfluxDb(c, bp, "heimdall_missed_checkpoints", map[string]string{}, map[string]interface{}{"missed_count": count})
+	log.Printf("Checkpoints missed count: %d", count)
+}

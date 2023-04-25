@@ -308,3 +308,22 @@ func GetValStatus(ops types.HTTPOptions) (types.ValStatusResp, error) {
 
 	return result, nil
 }
+
+// GetMissedCheckPoints will request the given endpoint and unmarshals the data
+// Returns the latest block details or error if any
+func GetMissedCheckPoints(ops types.HTTPOptions) (types.ValidatorInfo, error) {
+	var result types.ValidatorInfo
+	resp, err := HitHTTPTarget(ops)
+	if err != nil {
+		log.Printf("Error while getting total checkpoints: %v", err)
+		return result, err
+	}
+
+	err = json.Unmarshal(resp.Body, &result)
+	if err != nil {
+		log.Printf("Error while unmarshelling total checkpoints: %v", err)
+		return result, err
+	}
+
+	return result, nil
+}
