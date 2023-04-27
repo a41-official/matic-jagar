@@ -1,5 +1,5 @@
 [rpc_and_lcd_endpoints]
-eth_rpc_endpoint = "https://ethereum-mainnet-rpc.allthatnode.com" # Replace with infura endpoint 
+eth_rpc_endpoint = "https://mainnet.infura.io/v3/862870907d2b4ba4b07859e47da61874" # Replace with infura endpoint 
 bor_rpc_end_point = "http://211.219.19.71:8545"
 bor_external_rpc = "http://211.219.19.67:8545" # Replace the IP address with your sentry IP address
 heimdall_rpc_endpoint = "http://211.219.19.71:26657"
