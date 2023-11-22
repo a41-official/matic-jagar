@@ -39,7 +39,7 @@ block_diff_threshold = 10
 eth_balance_threshold = 0.1
 
 [scraper]
-rate = "6s"
+rate = "30s"
 validator_rate = "60s"
 contract_rate = "300s"
 tg_commnads_rate = "2s"
